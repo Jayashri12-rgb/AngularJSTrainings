@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<form ng-app="myApp" ng-controller="myCtrl" name="myForm">
+Name: <input ng-model="name"></br>
+Name by using two way data binding: {{name}}</br>
+Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
+</script>
+
+
+<!-- <form ng-app="" name="myForm">
+
+</form> -->
+
+<p>Use the ng-model directive to bind the value of the input field to a property made in the controller.</p>
+
+</body>
+</html>

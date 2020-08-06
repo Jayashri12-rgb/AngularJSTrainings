@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-init="person={firstName:'John',lastName:'Doe'}"> 
+
+<table border="1" bordercolor="blue">
+  <tr style="color:blue">               
+    <th style="width:150px">Id</th>               
+    <th style="width:150px">Name</th>               
+    <th style="width:150px">Salary</th>                   
+    <th>Action</th>
+  </tr>
+  <tr style="color:pink" ng-repeat="emp in person">
+    <td>{{emp.id}}</td>
+    <td>{{emp.employee_name}}</td>
+    <td>{{emp.employee_salary}}</td>
+    <td>
+      <a href="#">edit</a> | 
+      <a href="#">delete</a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://dummy.restapiexample.com/api/v1/employees")
+    .then(function (response) {$scope.employee = response.data;});
+});
+</script> -->
+
+</body>
+</html>
